@@ -1,5 +1,5 @@
 This script convert prices in international Amazon site. 
-This is able to exchange from currensy of every site to JPY,EUR,GBP,USD,CAD,AUD,CNY,MXN,BRL,THB,KRW. 
+This is able to exchange from currency of every site to JPY,EUR,GBP,USD,CAD,AUD,CNY,MXN,BRL,THB,KRW. 
 Currency Data are gotten from Xurrency.com via my own web service.
 
 This is hosted in userscripts.org first. Older versions are in there.
