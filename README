@@ -3,7 +3,10 @@ This is able to exchange from currensy of every site to JPY,EUR,GBP,USD,CAD,AUD,
 Currency Data are gotten from Xurrency.com via my own web service.
 
 This is hosted in userscripts.org first. Older versions are in there.
--http://userscripts.org/scripts/show/41488
+- http://userscripts.org/scripts/show/41488
 And from now on, this script is to be managed on github.com.
 
-
+reviews and discussions are also in userscripts.org.
+- http://userscripts.org/scripts/reviews/41488
+- http://userscripts.org/topics/21066
+#Thanks! setomits.
