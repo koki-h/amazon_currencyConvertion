@@ -95,12 +95,20 @@
     b.insertBefore(c,b.firstChild);
     c.show = function (){
       c.style.display = 'block';
+      GM_setValue('dialog_visible',true);
     }
     c.hide = function (){
       c.style.display = 'none';
+      GM_setValue('dialog_visible',false);
     }
     c.changeLabel = function (opt){
       d.getElementById('curSelect').value = opt;
+    }
+    c.toggle = function (){
+      visible = GM_getValue('dialog_visible');
+      if (visible){
+        c.show();
+      }
     }
     var ok=d.createElement('input');
     ok.type = 'button';
@@ -155,7 +163,7 @@
     to_cur = 'jpy';
   }
   var dialog = createSelectDialog();
-  dialog.show();
+  dialog.toggle();
   dialog.changeLabel(to_cur);
   GM_registerMenuCommand('select currency',dialog.show);
   var site = document.location.host;
@@ -175,3 +183,5 @@
     changeCurrency();
   }
 })()
+
+
