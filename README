@@ -4,7 +4,7 @@ Currency Data are gotten from Xurrency.com via my own web service.
 
 In default, prices are conveted to JPY.
 If you want to change it, use "userscript command" menu.
-(It will pop up when you click the Grease Monkey icon.)
+(It will pop up when you right-click the Grease Monkey icon.)
 
 This was hosted in userscripts.org first. Older versions are in there.
 - http://userscripts.org/scripts/show/41488
