@@ -34,6 +34,7 @@
       sign  : "$",
       regex : "\\$([\\d\\.]+)",
       tagclass : "priceLarge",
+      tagclass2 : "price",
     },
     "www.amazon.co.uk" : {
       name  : "gbp",
@@ -169,6 +170,9 @@
   var site = document.location.host;
   var cur = currency[site];
   var elemPrice = document.getElementsByClassName(cur.tagclass)[0];
+  if (!elemPrice && cur.tagclass2){
+    elemPrice = document.getElementsByClassName(cur.tagclass2)[0];
+  }
   if (elemPrice){
     if (cur.regex != ""){
       var pattern   = new RegExp(cur.regex);
@@ -183,5 +187,3 @@
     changeCurrency();
   }
 })()
-
-
