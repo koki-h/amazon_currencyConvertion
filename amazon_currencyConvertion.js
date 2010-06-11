@@ -63,8 +63,10 @@
     "www.amazon.cn" : {
       name  : "cny",
       sign  : "\u00A5",
-      regex : "",
+      regex : " *([\\d\\.]+)",
       tagclass : "OurPrice",
+      tagclass2 : "priceLarge",
+      delim : ",",
     },
   };
   function createSelectDialog(){
