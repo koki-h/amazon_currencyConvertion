@@ -12,11 +12,11 @@
 // ==/UserScript==
 
 (function () {
-  function log(message) {
-    if (unsafeWindow && unsafeWindow.console) {
-      unsafeWindow.console.log(message);
-    }
-  }
+//  function log(message) {
+//    if (unsafeWindow && unsafeWindow.console) {
+//      unsafeWindow.console.log(message);
+//    }
+//  }
   function round(num) {
     var lnum = Math.round(num * 100);
     return lnum / 100;
@@ -132,18 +132,17 @@
   }
   function changeCurrency(){
     var changed = document.getElementById('ac2y_changed');
-    var apiUrl = "http://exchange.gohannnotomo.org/1/" + cur.name + "/to/"+ to_cur + "/feed";
+    var apiUrl = "http://xurrency.com/api/" + cur.name + "/"+ to_cur + "/1";
     if (cur.name != to_cur){
       var gSearchRequest = GM_xmlhttpRequest({
         method: "GET",
         url: apiUrl,
         onload: function(res){
-            var resultObj = eval(res.responseText);
-            var rate = resultObj[0]['dc_value'];
+            var rate = res.responseText.match(/\"value\":(.*?),/)[1];
             var yenPrice = round(orgPrice * rate);
             var TO_CUR = to_cur.toUpperCase();
             var changed_html = "<span id='ac2y_changed'> (" 
-                              + '<img src="http://xurrency.com/images/flags/' + to_cur + '.png" /> ' 
+                              + '<!-- <img src="http://xurrency.com/images/flags/' + to_cur + '.png" /> -->' 
                               + TO_CUR + ":" + yenPrice 
                               + " <small>< " + cur.sign + "1=" + TO_CUR + ":"+ rate + " ></small>"
                               +" )</span>";
